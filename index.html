@@ -91,6 +91,23 @@ textarea.field{min-height:96px;resize:vertical}
 .sig .line{position:absolute;left:24px;right:24px;bottom:42px;border-bottom:1px solid var(--line-2);pointer-events:none}
 .sig-act{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:12.5px;color:var(--ink-3)}
 .info{background:var(--brand-soft);color:var(--brand-ink);border-radius:14px;padding:14px 16px;font-size:14px}
+/* una pregunta por pantalla */
+.step{padding-top:8px}
+.stepc{min-height:min(52vh,440px);padding:26px 24px}
+.stepc .eyebrow{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--brand);margin-bottom:6px}
+.stepc .sd{color:var(--ink-3);font-size:13.5px;margin:0 0 4px}
+.stepc .q{border:0;padding:8px 0 0}
+.stepc .qt{font-size:20px;line-height:1.38;font-weight:700}
+.stepc .qb{margin-top:18px}
+.stepc textarea.field{min-height:170px}
+.stepc.fwd{animation:inR .38s var(--ease) both}.stepc.back{animation:inL .38s var(--ease) both}
+@keyframes inR{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@keyframes inL{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+.stepnav{display:flex;gap:10px;margin-top:14px}.stepnav .btn{padding:14px 18px;font-size:16px;border-radius:14px}.stepnav .primary{flex:1}
+.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.welcome .wm{margin:18px 0 20px}.welcome .note{font-size:12.5px;text-align:center;margin-top:14px;color:var(--ink-3)}
+@media (max-width:600px){.stepc{padding:22px 18px}.stepc .qt{font-size:18px}}
 .done{text-align:center;padding:40px 24px}.done .ok{width:76px;height:76px;border-radius:50%;background:var(--good-soft);color:var(--good);display:grid;place-items:center;margin:0 auto 16px;animation:pop .5s var(--ease)}
 .done h2{font-size:24px}.done p{color:var(--ink-2)}
 /* panel de respuestas */
@@ -154,7 +171,7 @@ th{font-size:12px;color:var(--ink-3);font-weight:600;white-space:nowrap}tbody tr
    - Opciones abiertas para más adelante: enviar también a Excel/CRM/correo (función «destinos»),
      editor web de formularios, subir documentos (tipo «archivo»).
    ===================================================================== */
-const CLOUD={"owner":"Juan-biofy","repo":"formularios-datos","branch":"main","dir":"respuestas","pub":{"kty":"EC","crv":"P-256","x":"B9FqPWn-y3ibzSMOc8ZRzXyD7T53BxkO8RCztp0Okng","y":"kyrhF8at9okRsny04_htGSjV0wGXEDhsafnK8rQ9bbw"},"resp":{"n":600000,"s":"p3rycrTcz+taGNtrpybPGA==","i":"kUGKvWFhQBB6ZkyW","c":"iQK7atvx1j6Z/PPIfqZLUholMFh75frIZHMeYNRghBQMeaBg1kgi7fbN4VYsaywZPpEr30cN+zO9+7rYxFeFzhX//ETjgYDcBFHiChIdkZhjDTlDHoZ2ywsBcIT9I5+JgDrtYHSbF2IryVSjcQ=="},"users":[{"n":"Juan Giraldo","b":{"n":600000,"s":"oq9crH1FWH8bhQFEVTLU1g==","i":"cWHl5J2hjVNJiOyb","c":"2Ko+c2R37l90ybhQ3Dh7FVpyDTlJzoGnNlRz3S6b1p1x/7nOn95GrfWALe20LoS4XKsRyceYsfflrfDDSMrhjb/U4yXoNnBM124l1HsJKNS6F5RUkA7bWpmhqsUGaLSPAKMK8+LYlcVq2Tt5EIoxRXRJ7LOUeuJg87YlFyPQGLo3fT4hugkQLLk1BR7NocLSHhNEEz/ygHhGT3nOWnI0MEmWPcXpmYhUROeghkiCUuRyMZUk83DACTrnpINgnViuGtdTPI1loySMrn3P0/uOdgwz6FCTthORFi4W79ru1ZykcWdO78zumFgo3z1bTfIwqBIFZOfImfYst8gZasqORGEbZTI/6zE6MiUQXw/1ZUwTxXYjPYp36Oh6Uu5KPhS99Tcv3V8nJftcm7PdKfvE8QEkq1Blo6J2nrd0iZdVBf1EInyMImCuLsI6dgWV"}}]};
+const CLOUD={"owner":"Juan-biofy","repo":"formularios-datos","branch":"main","dir":"respuestas","pub":{"kty":"EC","crv":"P-256","x":"B9FqPWn-y3ibzSMOc8ZRzXyD7T53BxkO8RCztp0Okng","y":"kyrhF8at9okRsny04_htGSjV0wGXEDhsafnK8rQ9bbw"},"resp":{"n":600000,"s":"xVoUzavH3G9sdICPa7YAKw==","i":"Jqcw3AH9HbCDcK9Z","c":"vh57vS1ZtQthaZFAgwCI8MpbBrpUMR/EahOiBDRpYEE9cLI4zA2fNwUoubnnnVzhl2hBy56Bo+45UZWfTAM8+BXb9fbNHXFcD1VKqRIR9xzsZwkNqrx1aUESngzxhqPI6367ird2d1ZTFEsYMg=="},"users":[{"n":"Juan Giraldo","b":{"n":600000,"s":"fxZ/iXOfVYZO6PhFf52QMg==","i":"UzSEomBYk0alGu2+","c":"FuGdgKpxrZldRowM+3ovdQViLTFxrcsKE8q9ibMBgj9B6LpaJspvDEFKoEtpj3e/ik9LYMVzfsHkztvzfsRjKGzkl/ZpElXy8+d9MFVt0l1TNNO9DHAu2neiOY5DtgSHICfdy/fYT6K/vSpLh+ZxcIFW6YXazsWH72FWp5Ij/7/POPDMqP2R0umT1YzhUX2gAhUpNcSFHUedzzkuwA+uRiJD5wzfBvmPT93nviQM5uUD7wd5ySI8ijVwOkCb86D8WK9ET/zX945P2DSQFVIqMhFGyRvftO0J1xWLQCxMA7Sf6FdvqHxJkHQRAM1EzHdPuirlKKXomFjKR9G+ypwTdHsQBN+kmo0z0Y9ZJ34iWaTKXS4c7+KdwtO+BK4/Eanopo6JlLlL6VO1WOJUBzh5zTVPDvfPEu5PCAC1hxGoY6pZOpIIngnc8WHiMsI6"}}]};
 const FORMS=[{"id":"futuribles","version":1,"titulo":"¿Hasta dónde quieres llegar?","descripcion":"Cuestionario de futuros jefes de equipo · Programa Futuribles","intro":"Creemos que los futuros líderes pueden estar hoy dentro de nuestros propios equipos comerciales. Queremos conocer tus inquietudes, tus aspiraciones y hasta dónde estás dispuesto a llegar.\n\nNo buscamos respuestas perfectas. Buscamos personas con ambición, actitud, compromiso y ganas de superarse.","duracion":"15–20 min","resumen":["nombre","delegacion","q02","q18","q10"],"gracias":"Gracias por tus respuestas. Las leeremos con atención.","secciones":[{"titulo":"Tus datos","descripcion":"La fecha se guarda sola al enviar.","preguntas":[{"id":"nombre","tipo":"texto","texto":"Nombre y apellidos","obligatoria":true},{"id":"delegacion","tipo":"texto","texto":"Delegación","obligatoria":true}]},{"titulo":"Bloque 1 · Tu ambición profesional","preguntas":[{"id":"q01","tipo":"parrafo","texto":"1. ¿Dónde te gustaría estar profesionalmente dentro de nuestra empresa en los próximos dos años?","obligatoria":true},{"id":"q02","tipo":"opcion","texto":"2. ¿Te has planteado alguna vez convertirte en jefe de equipo y tener comerciales bajo tu responsabilidad?","opciones":["Sí, es uno de mis objetivos.","Me atrae la idea, pero tengo dudas.","Nunca me lo había planteado.","Prefiero seguir desarrollándome como comercial."],"obligatoria":true,"corto":"¿Se ha planteado ser jefe?"},{"id":"q03","tipo":"opcion","texto":"3. ¿Qué es lo que más te atraería de ocupar un puesto de mayor responsabilidad?","opciones":["Mejorar mis ingresos económicos.","Dirigir y desarrollar un equipo de personas.","Crecer profesionalmente y superar nuevos retos.","Conseguir mayor reconocimiento dentro de la empresa.","Una combinación de las anteriores."],"obligatoria":true},{"id":"q04","tipo":"parrafo","texto":"4. Si dentro de un año siguieras exactamente en la misma posición profesional que hoy, ¿cómo te sentirías? ¿Por qué?","obligatoria":true}]},{"titulo":"Bloque 2 · Tu mentalidad de líder","preguntas":[{"id":"q05","tipo":"parrafo","texto":"5. ¿Qué tres cualidades consideras imprescindibles para ser un buen jefe de equipo comercial?","obligatoria":true},{"id":"q06","tipo":"parrafo","texto":"6. ¿Qué crees que diferencia a un buen comercial de un buen jefe de equipo?","obligatoria":true},{"id":"q07","tipo":"parrafo","texto":"7. Imagina que mañana te damos la oportunidad de dirigir a cinco comerciales. ¿Qué sería lo primero que harías para conseguir que tu equipo funcione?","obligatoria":true},{"id":"q08","tipo":"parrafo","texto":"8. Uno de tus comerciales lleva varios días sin vender y está desmotivado. ¿Cómo actuarías?","obligatoria":true},{"id":"q09","tipo":"parrafo","texto":"9. ¿Estarías dispuesto a asumir la responsabilidad de los resultados de otras personas, además de los tuyos? ¿Por qué?","obligatoria":true}]},{"titulo":"Bloque 3 · Compromiso y superación","preguntas":[{"id":"q10","tipo":"escala","texto":"10. Del 1 al 10, ¿cómo valorarías tu nivel actual de ambición profesional?","min":1,"max":10,"obligatoria":true,"corto":"Ambición (1-10)"},{"id":"q11","tipo":"parrafo","texto":"11. ¿Qué aspectos de tu trabajo actual consideras que necesitas mejorar para poder dar el siguiente paso?","obligatoria":true},{"id":"q12","tipo":"opcion","texto":"12. ¿Estarías dispuesto a participar en un programa de formación y desarrollo para prepararte como futuro jefe de equipo?","opciones":["Sí, estoy totalmente dispuesto.","Sí, dependiendo de las condiciones.","Necesitaría conocer mejor el programa.","Actualmente no es mi prioridad."],"obligatoria":true},{"id":"q13","tipo":"parrafo","texto":"13. ¿Qué estarías dispuesto a cambiar o mejorar en tus hábitos profesionales para conseguir ese ascenso?","obligatoria":true},{"id":"q14","tipo":"parrafo","texto":"14. ¿Cómo reaccionas cuando las cosas no salen como esperabas o cuando recibes una crítica de un superior?","obligatoria":true}]},{"titulo":"Bloque 4 · Tu futuro en Grupo Engloba","preguntas":[{"id":"q15","tipo":"parrafo","texto":"15. Imagina que dentro de un año eres jefe de equipo, tienes cinco comerciales a tu cargo y consigues buenos resultados. ¿Qué significaría para ti haber alcanzado ese objetivo?","obligatoria":true},{"id":"q16","tipo":"parrafo","texto":"16. ¿Qué te gustaría que dijeran de ti los comerciales que estuvieran bajo tu responsabilidad?","obligatoria":true},{"id":"q17","tipo":"parrafo","texto":"17. ¿Qué necesitarías de la empresa para sentirte preparado y dar el paso hacia un puesto de mayor responsabilidad?","obligatoria":true},{"id":"q18","tipo":"opcion","texto":"18. Si hoy te ofreciéramos la posibilidad de iniciar un proceso de preparación para convertirte en jefe de equipo, ¿qué responderías?","opciones":["Quiero empezar cuanto antes.","Me interesa, pero necesito prepararme.","Me gustaría conocer mejor las responsabilidades.","Por ahora prefiero continuar como comercial."],"obligatoria":true,"corto":"Si hoy se lo ofreciéramos"}]},{"titulo":"Bloque 5 · Tu decisión","preguntas":[{"id":"q19","tipo":"parrafo","texto":"19. ¿Por qué crees que Grupo Engloba debería apostar por ti como uno de sus futuros jefes de equipo?","obligatoria":true},{"id":"q20","tipo":"parrafo","texto":"20. Completa esta frase: «Si la empresa me da la oportunidad de crecer profesionalmente, yo me comprometo a…»","obligatoria":true},{"id":"firma","tipo":"firma","texto":"Firma del candidato","obligatoria":true}]}]}];
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -241,7 +258,7 @@ function route(){
   const m=$('#main');m.oninput=m.onchange=m.onclick=null;
   const h=location.hash.replace(/^#\/?/,'').split('/');
   window.scrollTo(0,0);
-  if(h[0]==='f'&&FORMS.find(f=>f.id===h[1]))return viewForm(FORMS.find(f=>f.id===h[1]));
+  if(h[0]==='f'&&FORMS.find(f=>f.id===h[1]))return viewForm(FORMS.find(f=>f.id===h[1]),h[2]);
   if(h[0]==='r'&&sess.role==='admin'&&FORMS.find(f=>f.id===h[1]))return viewAnswers(FORMS.find(f=>f.id===h[1]));
   viewHome();
 }
@@ -262,7 +279,58 @@ function viewHome(){
    Tipos de pregunta: texto · parrafo · numero · email · telefono · fecha · opcion (una) · varias · escala · firma · info
    (preparado para añadir «archivo» cuando haga falta subir documentos) */
 let F=null,ANS={};
-function viewForm(f){
+/* Modo «una pregunta por pantalla» (el normal). Un formulario con "modo":"lista" sale todo seguido.
+   Cada pantalla tiene su dirección (#/f/<id>/<n>), así el botón «atrás» del móvil también funciona. */
+let FILL=null,STEPS=[],STEP=-1;
+const cleanNum=t=>String(t).replace(/^\d+\.\s+/,'');
+function viewForm(f,arg){
+  if(f.modo==='lista')return viewFormList(f);
+  if(FILL!==f.id){F=f;FILL=f.id;ANS={};const d=S.get('fm_draft_'+f.id);if(d)try{ANS=JSON.parse(d);}catch(e){}
+    STEPS=f.secciones.flatMap(s=>s.preguntas.map(q=>({q,s})));STEP=-1;}
+  F=f;
+  let n=arg==null||arg===''?-1:parseInt(arg,10)-1;if(isNaN(n))n=-1;n=Math.min(Math.max(n,-1),STEPS.length-1);
+  // No se puede saltar por delante de una obligatoria sin responder
+  const fm=STEPS.findIndex(x=>x.q.obligatoria&&x.q.tipo!=='info'&&!isAnswered(x.q));
+  if(fm>=0&&n>fm){n=fm;history.replaceState(null,'',`#/f/${f.id}/${n+1}`);}
+  const dir=n>=STEP?'fwd':'back';STEP=n;
+  if(n<0)return stepWelcome(f);
+  stepShow(n,dir);
+}
+const goStep=i=>{location.hash=i<0?`#/f/${F.id}`:`#/f/${F.id}/${i+1}`;};
+function stepWelcome(f){
+  const qs=allQ(),done=qs.filter(isAnswered).length;
+  $('#main').innerHTML=`<div class="wrap"><div class="card fhead welcome enter">${f.descripcion?`<div class="eyebrow">${esc(f.descripcion)}</div>`:''}<h1>${esc(f.titulo)}</h1>${f.intro?`<p>${esc(f.intro)}</p>`:''}
+    <div class="meta wm">${f.duracion?`<span>⏱ ${esc(f.duracion)}</span>`:''}<span>${qs.length} preguntas</span><span>Una por pantalla</span></div>
+    <button class="btn primary big" id="bGo">${done?`Continuar · llevas ${done} de ${qs.length}`:'Empezar'}</button>
+    ${done?'<button class="btn ghost sm" id="bReset" style="margin-top:10px;width:100%">Empezar de cero</button>':''}
+    <div class="note">Si sales a medias, tus respuestas se quedan guardadas en este dispositivo. Al enviarlas van cifradas: solo las ven las personas autorizadas.</div></div></div>`;
+  $('#bGo').onclick=()=>{let i=done?STEPS.findIndex(x=>x.q.tipo!=='info'&&!isAnswered(x.q)):0;if(i<0)i=STEPS.length-1;goStep(i);};
+  const r=$('#bReset');if(r)r.onclick=()=>{if(!r.dataset.armed){r.dataset.armed=1;r.textContent='¿Seguro? Se borra lo que llevas. Pulsa otra vez';return;}ANS={};S.del('fm_draft_'+f.id);stepWelcome(f);};
+}
+function stepShow(n,dir){
+  const {q,s}=STEPS[n],last=n===STEPS.length-1,L=STEPS.length;
+  const newSec=!STEPS[n-1]||STEPS[n-1].s!==s;
+  $('#main').innerHTML=`<div class="prog"><div class="wrap" style="padding:0 18px"><div class="bar"><i id="pBar" style="width:${(dir==='fwd'?n:n+2)/L*100}%"></i></div><div class="t"><span>Pregunta ${n+1} de ${L}</span><span id="pTxt"></span></div></div></div>
+    <div class="wrap step"><div class="card stepc ${dir}">${s.titulo?`<div class="eyebrow">${esc(s.titulo)}</div>`:''}${s.descripcion&&newSec?`<p class="sd">${esc(s.descripcion)}</p>`:''}${qHTML({...q,texto:cleanNum(q.texto)})}</div>
+    <div class="stepnav"><button class="btn" id="bBack">← ${n?'Atrás':'Inicio'}</button><button class="btn primary" id="bNext">${last?'Enviar respuestas':'Siguiente →'}</button></div>
+    ${last?'<p class="muted" style="text-align:center;font-size:12.5px;margin-top:10px">Tus respuestas se guardan cifradas. Solo las ven las personas autorizadas.</p>':''}</div>`;
+  bindForm();progress();
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{const b=$('#pBar');if(b)b.style.width=(n+1)/L*100+'%';}));
+  const next=()=>{
+    if(q.obligatoria&&q.tipo!=='info'&&!isAnswered(q)){const w=document.getElementById('w_'+q.id);w.classList.remove('bad','shake');void w.offsetWidth;w.classList.add('bad','shake');return;}
+    if(last)send();else goStep(n+1);
+  };
+  $('#bBack').onclick=()=>goStep(n-1);$('#bNext').onclick=next;
+  // Al elegir una opción o un número, pasa sola a la siguiente
+  const m=$('#main'),oc=m.onchange,ok=m.onclick;
+  const auto=()=>{if(last)return;const my=n;setTimeout(()=>{if(STEP===my&&FILL===F.id&&isAnswered(q))goStep(my+1);},420);};
+  if(q.tipo==='opcion')m.onchange=e=>{oc(e);auto();};
+  if(q.tipo==='escala')m.onclick=e=>{ok(e);if(e.target.closest('.scale button'))auto();};
+  const el=document.getElementById('q_'+q.id);
+  if(el&&['texto','numero','email','telefono','fecha'].includes(q.tipo)){el.setAttribute('enterkeyhint','next');el.onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();next();}};}
+  if(el&&matchMedia('(pointer:fine)').matches)setTimeout(()=>el.focus({preventScroll:true}),380);
+}
+function viewFormList(f){
   F=f;ANS={};
   const draft=S.get('fm_draft_'+f.id);if(draft)try{ANS=JSON.parse(draft);}catch(e){}
   let h=`<div class="prog"><div class="wrap" style="padding:0 18px"><div class="bar"><i id="pBar"></i></div><div class="t"><span id="pTxt"></span><span>${esc(f.duracion||'')}</span></div></div></div>
@@ -294,7 +362,7 @@ function qHTML(q){
 const allQ=()=>F.secciones.flatMap(s=>s.preguntas).filter(q=>q.tipo!=='info');
 const isAnswered=q=>{const v=ANS[q.id];return Array.isArray(v)?v.length>0:v!=null&&String(v).trim()!=='';};
 function saveDraft(){const d={...ANS};for(const q of allQ())if(q.tipo==='firma')delete d[q.id];S.set('fm_draft_'+F.id,JSON.stringify(d));}
-function progress(){const qs=allQ(),n=qs.filter(isAnswered).length;$('#pBar').style.width=(qs.length?n/qs.length*100:0)+'%';$('#pTxt').textContent=`${n} de ${qs.length} respondidas`;}
+function progress(){const qs=allQ(),n=qs.filter(isAnswered).length;if(FILL&&STEP>=0){const t=$('#pTxt');if(t)t.textContent=`${n} respondidas`;return;}$('#pBar').style.width=(qs.length?n/qs.length*100:0)+'%';$('#pTxt').textContent=`${n} de ${qs.length} respondidas`;}
 function changed(qid){const w=document.getElementById('w_'+qid);if(w)w.classList.remove('bad');saveDraft();progress();}
 function bindForm(){
   const m=$('#main');
@@ -305,7 +373,7 @@ function bindForm(){
   m.onclick=e=>{const sb=e.target.closest('.scale button');if(sb){const box=sb.parentElement;ANS[box.dataset.q]=Number(sb.dataset.v);box.querySelectorAll('button').forEach(b=>b.classList.toggle('on',b===sb));changed(box.dataset.q);return;}
     const cl=e.target.closest('[data-clear]');if(cl){const pad=PADS[cl.dataset.clear];if(pad)pad.clear();delete ANS[cl.dataset.clear];changed(cl.dataset.clear);return;}};
   PADS={};document.querySelectorAll('.sig').forEach(el=>{PADS[el.dataset.q]=sigPad(el);});
-  $('#btnSend').onclick=send;
+  const bs=$('#btnSend');if(bs)bs.onclick=send;
 }
 /* ---------- Firma con el dedo ---------- */
 let PADS={};
@@ -313,6 +381,8 @@ function sigPad(box){
   const cv=box.querySelector('canvas'),ph=box.querySelector('.ph'),qid=box.dataset.q;let ctx,drawing=false,last=null,dirty=false;
   const fit=()=>{const r=cv.getBoundingClientRect(),d=window.devicePixelRatio||1;cv.width=r.width*d;cv.height=r.height*d;ctx=cv.getContext('2d');ctx.scale(d,d);ctx.lineCap='round';ctx.lineJoin='round';ctx.strokeStyle='#14213d';ctx.lineWidth=2.4;};
   fit();
+  // Si ya había firmado (volver atrás), se vuelve a pintar
+  if(ANS[qid]){const img=new Image();img.onload=()=>{const r=cv.getBoundingClientRect();ctx.drawImage(img,0,0,r.width,r.height);ph.classList.add('hidden');dirty=true;};img.src=ANS[qid];}
   const pos=e=>{const r=cv.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top};};
   cv.addEventListener('pointerdown',e=>{e.preventDefault();cv.setPointerCapture(e.pointerId);drawing=true;last=pos(e);ctx.beginPath();ctx.arc(last.x,last.y,1.1,0,Math.PI*2);ctx.fillStyle='#14213d';ctx.fill();ph.classList.add('hidden');dirty=true;});
   cv.addEventListener('pointermove',e=>{if(!drawing)return;e.preventDefault();const p=pos(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;});
@@ -326,15 +396,16 @@ function exportSig(cv){const w=600,h=Math.round(600*cv.height/cv.width),o=docume
 async function send(){
   const miss=allQ().filter(q=>q.obligatoria&&!isAnswered(q));
   document.querySelectorAll('.q.bad').forEach(x=>x.classList.remove('bad'));
+  if(miss.length&&FILL){toast(miss.length===1?'Falta 1 pregunta obligatoria':`Faltan ${miss.length} preguntas obligatorias`);goStep(STEPS.findIndex(x=>x.q.id===miss[0].id));return;}
   if(miss.length){miss.forEach(q=>{const w=document.getElementById('w_'+q.id);if(w)w.classList.add('bad');});document.getElementById('w_'+miss[0].id).scrollIntoView({behavior:'smooth',block:'center'});toast(miss.length===1?'Falta 1 pregunta obligatoria':`Faltan ${miss.length} preguntas obligatorias`);return;}
-  const b=$('#btnSend');b.disabled=true;b.innerHTML='<span class="spin"></span> Enviando…';
+  const b=$('#btnSend')||$('#bNext');b.disabled=true;b.innerHTML='<span class="spin"></span> Enviando…';
   try{
     const at=new Date().toISOString(),rid=at.replace(/[:.]/g,'-')+'-'+Math.random().toString(36).slice(2,8);
     const answer={form:F.id,version:F.version||1,at,answers:ANS,device:/Mobi|Android|iPhone/i.test(navigator.userAgent)?'móvil':'ordenador o tablet'};
     const env=await sealAnswer(answer);
     await store.put(`${dirOf(F.id)}/${rid}.json`,{form:F.id,at,...env});
     for(const d of DESTINOS)try{await d(F,answer);}catch(e){console.warn(e);}
-    S.del('fm_draft_'+F.id);
+    S.del('fm_draft_'+F.id);FILL=null;STEP=-1;
     $('#main').innerHTML=`<div class="wrap"><div class="card done"><div class="ok">${ICO.ok}</div><h2>¡Gracias!</h2><p>${esc(F.gracias||'Tus respuestas se han enviado correctamente.')}</p><button class="btn soft" onclick="location.hash=''">Volver al inicio</button></div></div>`;window.scrollTo(0,0);
   }catch(e){console.error(e);b.disabled=false;b.textContent='Enviar respuestas';toast('No se ha podido enviar. Revisa la conexión y vuelve a intentarlo: tus respuestas siguen aquí.');}
 }
