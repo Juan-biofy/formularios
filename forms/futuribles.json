@@ -1,0 +1,217 @@
+{
+ "id": "futuribles",
+ "version": 1,
+ "titulo": "¿Hasta dónde quieres llegar?",
+ "descripcion": "Cuestionario de futuros jefes de equipo · Programa Futuribles",
+ "intro": "Creemos que los futuros líderes pueden estar hoy dentro de nuestros propios equipos comerciales. Queremos conocer tus inquietudes, tus aspiraciones y hasta dónde estás dispuesto a llegar.\n\nNo buscamos respuestas perfectas. Buscamos personas con ambición, actitud, compromiso y ganas de superarse.",
+ "duracion": "15–20 min",
+ "resumen": [
+  "nombre",
+  "delegacion",
+  "q02",
+  "q18",
+  "q10"
+ ],
+ "gracias": "Gracias por tus respuestas. Las leeremos con atención.",
+ "secciones": [
+  {
+   "titulo": "Tus datos",
+   "descripcion": "La fecha se guarda sola al enviar.",
+   "preguntas": [
+    {
+     "id": "nombre",
+     "tipo": "texto",
+     "texto": "Nombre y apellidos",
+     "obligatoria": true
+    },
+    {
+     "id": "delegacion",
+     "tipo": "texto",
+     "texto": "Delegación",
+     "obligatoria": true
+    }
+   ]
+  },
+  {
+   "titulo": "Bloque 1 · Tu ambición profesional",
+   "preguntas": [
+    {
+     "id": "q01",
+     "tipo": "parrafo",
+     "texto": "1. ¿Dónde te gustaría estar profesionalmente dentro de nuestra empresa en los próximos dos años?",
+     "obligatoria": true
+    },
+    {
+     "id": "q02",
+     "tipo": "opcion",
+     "texto": "2. ¿Te has planteado alguna vez convertirte en jefe de equipo y tener comerciales bajo tu responsabilidad?",
+     "opciones": [
+      "Sí, es uno de mis objetivos.",
+      "Me atrae la idea, pero tengo dudas.",
+      "Nunca me lo había planteado.",
+      "Prefiero seguir desarrollándome como comercial."
+     ],
+     "obligatoria": true,
+     "corto": "¿Se ha planteado ser jefe?"
+    },
+    {
+     "id": "q03",
+     "tipo": "opcion",
+     "texto": "3. ¿Qué es lo que más te atraería de ocupar un puesto de mayor responsabilidad?",
+     "opciones": [
+      "Mejorar mis ingresos económicos.",
+      "Dirigir y desarrollar un equipo de personas.",
+      "Crecer profesionalmente y superar nuevos retos.",
+      "Conseguir mayor reconocimiento dentro de la empresa.",
+      "Una combinación de las anteriores."
+     ],
+     "obligatoria": true
+    },
+    {
+     "id": "q04",
+     "tipo": "parrafo",
+     "texto": "4. Si dentro de un año siguieras exactamente en la misma posición profesional que hoy, ¿cómo te sentirías? ¿Por qué?",
+     "obligatoria": true
+    }
+   ]
+  },
+  {
+   "titulo": "Bloque 2 · Tu mentalidad de líder",
+   "preguntas": [
+    {
+     "id": "q05",
+     "tipo": "parrafo",
+     "texto": "5. ¿Qué tres cualidades consideras imprescindibles para ser un buen jefe de equipo comercial?",
+     "obligatoria": true
+    },
+    {
+     "id": "q06",
+     "tipo": "parrafo",
+     "texto": "6. ¿Qué crees que diferencia a un buen comercial de un buen jefe de equipo?",
+     "obligatoria": true
+    },
+    {
+     "id": "q07",
+     "tipo": "parrafo",
+     "texto": "7. Imagina que mañana te damos la oportunidad de dirigir a cinco comerciales. ¿Qué sería lo primero que harías para conseguir que tu equipo funcione?",
+     "obligatoria": true
+    },
+    {
+     "id": "q08",
+     "tipo": "parrafo",
+     "texto": "8. Uno de tus comerciales lleva varios días sin vender y está desmotivado. ¿Cómo actuarías?",
+     "obligatoria": true
+    },
+    {
+     "id": "q09",
+     "tipo": "parrafo",
+     "texto": "9. ¿Estarías dispuesto a asumir la responsabilidad de los resultados de otras personas, además de los tuyos? ¿Por qué?",
+     "obligatoria": true
+    }
+   ]
+  },
+  {
+   "titulo": "Bloque 3 · Compromiso y superación",
+   "preguntas": [
+    {
+     "id": "q10",
+     "tipo": "escala",
+     "texto": "10. Del 1 al 10, ¿cómo valorarías tu nivel actual de ambición profesional?",
+     "min": 1,
+     "max": 10,
+     "obligatoria": true,
+     "corto": "Ambición (1-10)"
+    },
+    {
+     "id": "q11",
+     "tipo": "parrafo",
+     "texto": "11. ¿Qué aspectos de tu trabajo actual consideras que necesitas mejorar para poder dar el siguiente paso?",
+     "obligatoria": true
+    },
+    {
+     "id": "q12",
+     "tipo": "opcion",
+     "texto": "12. ¿Estarías dispuesto a participar en un programa de formación y desarrollo para prepararte como futuro jefe de equipo?",
+     "opciones": [
+      "Sí, estoy totalmente dispuesto.",
+      "Sí, dependiendo de las condiciones.",
+      "Necesitaría conocer mejor el programa.",
+      "Actualmente no es mi prioridad."
+     ],
+     "obligatoria": true
+    },
+    {
+     "id": "q13",
+     "tipo": "parrafo",
+     "texto": "13. ¿Qué estarías dispuesto a cambiar o mejorar en tus hábitos profesionales para conseguir ese ascenso?",
+     "obligatoria": true
+    },
+    {
+     "id": "q14",
+     "tipo": "parrafo",
+     "texto": "14. ¿Cómo reaccionas cuando las cosas no salen como esperabas o cuando recibes una crítica de un superior?",
+     "obligatoria": true
+    }
+   ]
+  },
+  {
+   "titulo": "Bloque 4 · Tu futuro en Grupo Engloba",
+   "preguntas": [
+    {
+     "id": "q15",
+     "tipo": "parrafo",
+     "texto": "15. Imagina que dentro de un año eres jefe de equipo, tienes cinco comerciales a tu cargo y consigues buenos resultados. ¿Qué significaría para ti haber alcanzado ese objetivo?",
+     "obligatoria": true
+    },
+    {
+     "id": "q16",
+     "tipo": "parrafo",
+     "texto": "16. ¿Qué te gustaría que dijeran de ti los comerciales que estuvieran bajo tu responsabilidad?",
+     "obligatoria": true
+    },
+    {
+     "id": "q17",
+     "tipo": "parrafo",
+     "texto": "17. ¿Qué necesitarías de la empresa para sentirte preparado y dar el paso hacia un puesto de mayor responsabilidad?",
+     "obligatoria": true
+    },
+    {
+     "id": "q18",
+     "tipo": "opcion",
+     "texto": "18. Si hoy te ofreciéramos la posibilidad de iniciar un proceso de preparación para convertirte en jefe de equipo, ¿qué responderías?",
+     "opciones": [
+      "Quiero empezar cuanto antes.",
+      "Me interesa, pero necesito prepararme.",
+      "Me gustaría conocer mejor las responsabilidades.",
+      "Por ahora prefiero continuar como comercial."
+     ],
+     "obligatoria": true,
+     "corto": "Si hoy se lo ofreciéramos"
+    }
+   ]
+  },
+  {
+   "titulo": "Bloque 5 · Tu decisión",
+   "preguntas": [
+    {
+     "id": "q19",
+     "tipo": "parrafo",
+     "texto": "19. ¿Por qué crees que Grupo Engloba debería apostar por ti como uno de sus futuros jefes de equipo?",
+     "obligatoria": true
+    },
+    {
+     "id": "q20",
+     "tipo": "parrafo",
+     "texto": "20. Completa esta frase: «Si la empresa me da la oportunidad de crecer profesionalmente, yo me comprometo a…»",
+     "obligatoria": true
+    },
+    {
+     "id": "firma",
+     "tipo": "firma",
+     "texto": "Firma del candidato",
+     "obligatoria": true
+    }
+   ]
+  }
+ ]
+}
