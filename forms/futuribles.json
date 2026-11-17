@@ -1,10 +1,10 @@
 {
  "id": "futuribles",
- "version": 1,
+ "version": 2,
  "titulo": "¿Hasta dónde quieres llegar?",
  "descripcion": "Cuestionario de futuros jefes de equipo · Programa Futuribles",
  "intro": "Creemos que los futuros líderes pueden estar hoy dentro de nuestros propios equipos comerciales. Queremos conocer tus inquietudes, tus aspiraciones y hasta dónde estás dispuesto a llegar.\n\nNo buscamos respuestas perfectas. Buscamos personas con ambición, actitud, compromiso y ganas de superarse.",
- "duracion": "15–20 min",
+ "duracion": "5–10 min",
  "resumen": [
   "nombre",
   "delegacion",
@@ -26,9 +26,14 @@
     },
     {
      "id": "delegacion",
-     "tipo": "texto",
+     "tipo": "lista",
      "texto": "Delegación",
-     "obligatoria": true
+     "obligatoria": true,
+     "opciones": [
+      "Alicante",
+      "Córdoba"
+     ],
+     "placeholder": "Elige tu delegación"
     }
    ]
   },
@@ -196,7 +201,7 @@
     {
      "id": "q19",
      "tipo": "parrafo",
-     "texto": "19. ¿Por qué crees que Grupo Engloba debería apostar por ti como uno de sus futuros jefes de equipo?",
+     "texto": "19. ¿Por qué crees que Culligan Biofy debería apostar por ti como uno de sus futuros jefes de equipo?",
      "obligatoria": true
     },
     {

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
   Monta el index.html publicable de Formularios · Culligan Biofy a partir de src/app.html:
-    1. mete el logo vertical (SVG) en base64;
+    1. mete el logo horizontal (SVG) en base64 (Juan, 17/11);
     2. mete los formularios de la carpeta forms/ (un .json por formulario);
     3. mete la conexión con el repositorio privado de respuestas, con el token cifrado con las contraseñas.
 
@@ -43,10 +43,10 @@ if (!secretsPath) { console.error('Falta --secrets'); process.exit(1); }
 let html = readFileSync(src, 'utf8');
 const MARK = 'const CLOUD=/*__CLOUD__*/null;', MARKF = 'const FORMS=/*__FORMS__*/[];';
 if (!html.includes(MARK) || !html.includes(MARKF)) { console.error('Faltan las marcas __CLOUD__ / __FORMS__'); process.exit(1); }
-html = html.split('__LOGO__').join(readFileSync(join(aqui, '../src/logo-vertical-blue.svg')).toString('base64'));
+html = html.split('__LOGO__').join(readFileSync(join(aqui, '../src/logo-horizontal-blue.svg')).toString('base64'));
 
 // Formularios: se comprueba que cada uno está bien escrito
-const TIPOS = ['texto', 'parrafo', 'numero', 'email', 'telefono', 'fecha', 'opcion', 'varias', 'escala', 'firma', 'info'];
+const TIPOS = ['texto', 'parrafo', 'numero', 'email', 'telefono', 'fecha', 'opcion', 'lista', 'varias', 'escala', 'firma', 'info'];
 const forms = readdirSync(formsDir).filter(f => f.endsWith('.json')).sort().map(f => {
   const F = JSON.parse(readFileSync(join(formsDir, f), 'utf8'));
   const ids = new Set();
@@ -56,7 +56,7 @@ const forms = readdirSync(formsDir).filter(f => f.endsWith('.json')).sort().map(
     if (q.tipo === 'info') continue;
     if (!q.id || ids.has(q.id)) throw new Error(`${f}: id de pregunta vacío o repetido «${q.id}»`);
     ids.add(q.id);
-    if (['opcion', 'varias'].includes(q.tipo) && !(q.opciones || []).length) throw new Error(`${f}: «${q.id}» no tiene opciones`);
+    if (['opcion', 'lista', 'varias'].includes(q.tipo) && !(q.opciones || []).length) throw new Error(`${f}: «${q.id}» no tiene opciones`);
   }
   return F;
 });
