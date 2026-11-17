@@ -66,6 +66,12 @@ html = html.replace(MARKF, 'const FORMS=' + JSON.stringify(forms) + ';');
 
 // Conexión y contraseñas
 const S = JSON.parse(readFileSync(secretsPath, 'utf8'));
+// Sistema único de contraseñas (17/11): las personas del panel salen del archivo de accesos común
+const accesosPath = arg('accesos');
+if (accesosPath) {
+  const A = JSON.parse(readFileSync(accesosPath, 'utf8'));
+  S.usuarios = A.usuarios.filter(u => u.webs && u.webs.formularios).map(u => ({ nombre: u.nombre, pw: u.pw }));
+}
 for (const k of ['pw_responder', 'usuarios']) if (!S[k]) { console.error('Falta «' + k + '» en los secretos'); process.exit(1); }
 if (!flag('local')) for (const k of ['owner', 'repo', 'token']) if (!S[k] || String(S[k]).includes('…')) { console.error('Falta «' + k + '» en los secretos'); process.exit(1); }
 const pws = [S.pw_responder, ...S.usuarios.map(u => u.pw)];
@@ -76,7 +82,7 @@ const { subtle } = globalThis.crypto;
 if (!S.claves) {
   const kp = await subtle.generateKey({ name: 'ECDH', namedCurve: 'P-256' }, true, ['deriveKey']);
   S.claves = { pub: await subtle.exportKey('jwk', kp.publicKey), priv: await subtle.exportKey('jwk', kp.privateKey) };
-  writeFileSync(secretsPath, JSON.stringify(S, null, 2));
+  { const orig = JSON.parse(readFileSync(secretsPath, 'utf8')); orig.claves = S.claves; writeFileSync(secretsPath, JSON.stringify(orig, null, 2)); }
   console.log('Claves de cifrado creadas y guardadas en el fichero de secretos (no las borres).');
 }
 const token = flag('local') ? 'local' : S.token;
