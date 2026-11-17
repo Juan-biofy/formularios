@@ -43,6 +43,8 @@ if (!secretsPath) { console.error('Falta --secrets'); process.exit(1); }
 let html = readFileSync(src, 'utf8');
 const MARK = 'const CLOUD=/*__CLOUD__*/null;', MARKF = 'const FORMS=/*__FORMS__*/[];';
 if (!html.includes(MARK) || !html.includes(MARKF)) { console.error('Faltan las marcas __CLOUD__ / __FORMS__'); process.exit(1); }
+// Dos versiones del logo: azul para el modo claro y blanco para el oscuro
+html = html.split('__LOGO_W__').join(readFileSync(join(aqui, '../src/logo-horizontal-white.svg')).toString('base64'));
 html = html.split('__LOGO__').join(readFileSync(join(aqui, '../src/logo-horizontal-blue.svg')).toString('base64'));
 
 // Formularios: se comprueba que cada uno está bien escrito
